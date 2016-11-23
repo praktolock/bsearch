@@ -5,20 +5,20 @@ int bsearch(int*arr, int sz, int n)
     int counter=0;
     while(counter<sz)
     {
-        if(arr[counter]>n) break;
+        if(arr[counter]>n)return(counter);
         counter++;
     }
-    if(counter==sz)
         return(-1);
-    else
-        return(counter);
 }
 
 int main()
 {
     int arr[]={1,4,6,6,9,12,16};
     
-    printf("%d\n", bsearch(arr, 7, 7));
-
+    int index=bsearch(arr, sizeof(arr)/sizeof(int), 14);
+    if(index==-1)
+        printf("there is no suitable number in array :-(\n");
+    else
+        printf("%d\n", index);
     return 0;
 }
